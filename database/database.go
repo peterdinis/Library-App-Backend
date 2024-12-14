@@ -4,9 +4,7 @@ import (
  "log"
  "os"
  "strconv"
- "gorm.io/driver/postgres"
- "github.com/adhtanjung/go_rest_api/config"
- "github.com/adhtanjung/go_rest_api/model"
+ "github.com/peterdinis/library-app-backend/config"
  "gorm.io/gorm"
  "gorm.io/gorm/logger"
 )
@@ -34,7 +32,7 @@ func Connect() {
  log.Println("Connected")
  db.Logger = logger.Default.LogMode(logger.Info)
  log.Println("running migrations")
- db.AutoMigrate(&model.User{})
+ // db.AutoMigrate(&model.User{})
  DB = Dbinstance{
   Db: db,
  }
