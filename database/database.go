@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 	"strconv"
-
+	"github.com/peterdinis/library-app/backend/entities"
 	"github.com/peterdinis/library-app-backend/config"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -55,7 +55,7 @@ func Connect() {
 
 	// Log running migrations (if applicable)
 	log.Println("running migrations")
-
+	err = db.AutoMigrate(Category{})
 	// Assign the database instance to the global DB variable
 	DB = Dbinstance{
 		Db: db,
