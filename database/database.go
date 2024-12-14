@@ -1,13 +1,15 @@
 package database
 import (
- "fmt"
- "log"
- "os"
- "strconv"
- "github.com/peterdinis/library-app-backend/config"
- "gorm.io/gorm"
- "gorm.io/gorm/logger"
-)
+    "fmt"
+    "log"
+    "os"
+    "strconv"
+    "github.com/peterdinis/library-app-backend/config"
+    "gorm.io/gorm"
+    "gorm.io/gorm/logger"
+    "gorm.io/driver/postgres" // Add this import
+  )
+  
 // Database instance
 type Dbinstance struct {
  Db *gorm.DB
