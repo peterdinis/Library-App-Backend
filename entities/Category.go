@@ -1,3 +1,5 @@
+package entities
+
 import (
 	"fmt"
 	"gorm.io/driver/postgres"
