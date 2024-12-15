@@ -1,13 +1,11 @@
 package entities
 
-
 import (
 	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
-
 
 type Book struct {
 	ID          uint      `gorm:"primaryKey"`
@@ -19,6 +17,8 @@ type Book struct {
 	IsAvailable bool      `gorm:"default:true"`
 	CategoryID  uint      `gorm:"not null"`
 	Category    Category  `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	AuthorID    uint      `gorm:"not null"`
+	Author      Author    `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` // Relácia s autorom
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 }
