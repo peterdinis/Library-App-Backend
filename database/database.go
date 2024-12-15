@@ -7,7 +7,6 @@ import (
 	"strconv"
 	"github.com/peterdinis/library-app/backend/entities"
 	"github.com/peterdinis/library-app-backend/config"
-	"github.com/peterdinis/library-app-backend/seeders"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/driver/postgres"
@@ -50,7 +49,6 @@ func Connect() {
 
 	// Log the successful connection
 	log.Println("Connected")
-	seeders.SeedCategories()
 	// Set the logger for the database
 	db.Logger = logger.Default.LogMode(logger.Info)
 
