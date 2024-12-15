@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/peterdinis/library-app-backend/database"
-	"github.com/peterdinis/library-app-backend/models"
+	"github.com/peterdinis/library-app-backend/entities"
 )
 
 /* Later this will be global seeder for all tables */
