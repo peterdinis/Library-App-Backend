@@ -18,7 +18,9 @@ type Book struct {
 	CategoryID  uint      `gorm:"not null"`
 	Category    Category  `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	AuthorID    uint      `gorm:"not null"`
-	Author      Author    `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` // Relácia s autorom
+	Author      Author    `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	PublisherID uint      `gorm:"not null"`              
+	Publisher   Publisher `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"` 
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 }

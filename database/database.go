@@ -56,7 +56,7 @@ func Connect() {
 
 	// Log running migrations (if applicable)
 	log.Println("running migrations")
-	err = db.AutoMigrate(&Category{}, &Book{}, &Author{})
+	err = db.AutoMigrate(&Category{}, &Book{}, &Author{}, &Publisher{})
 	// Assign the database instance to the global DB variable
 	DB = Dbinstance{
 		Db: db,

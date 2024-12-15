@@ -11,5 +11,5 @@ type Category struct {
 	Description string    `gorm:"size:500"`
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
-	Books       []Book    `gorm:"foreignKey:CategoryID"` // Relácia s knihami
+	Books       []Book    `gorm:"foreignKey:CategoryID"`
 }

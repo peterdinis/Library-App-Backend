@@ -14,6 +14,7 @@ type Author struct {
 	LiteraryPeriod   string    `gorm:"size:255"`
 	DateOfBirth      time.Time `gorm:"not null"`
 	DateOfDeath      *time.Time
+	Image            string    `gorm:"size:500"`
 	NumberOfBooks    int       `gorm:"default:0"`
 	Books            []Book    `gorm:"foreignKey:AuthorID"`
 	CreatedAt        time.Time
