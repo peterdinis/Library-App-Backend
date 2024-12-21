@@ -1,13 +1,12 @@
 package database
 
+import "github.com/peterdinis/library-app-backend/entities"
 import (
 	"fmt"
 	"log"
 	"os"
 	"strconv"
-	"github.com/peterdinis/library-app/backend/entities"
 	"github.com/peterdinis/library-app-backend/config"
-	"github.com/peterdinis/library-app-backend/seeders"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/driver/postgres"
@@ -50,13 +49,12 @@ func Connect() {
 
 	// Log the successful connection
 	log.Println("Connected")
-	seeders.SeedCategories()
 	// Set the logger for the database
 	db.Logger = logger.Default.LogMode(logger.Info)
 
 	// Log running migrations (if applicable)
 	log.Println("running migrations")
-	err = db.AutoMigrate(&Category{}, &Book{}, &Author{}, &Publisher{})
+	err = db.AutoMigrate(&entities.Category{}, &entities.Book{}, &entities.Author{}, &entities.Publisher{})
 	// Assign the database instance to the global DB variable
 	DB = Dbinstance{
 		Db: db,
