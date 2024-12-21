@@ -2,9 +2,6 @@ package entities
 
 import (
 	"time"
-
-	"gorm.io/driver/postgres"
-	"gorm.io/gorm"
 )
 
 type Author struct {

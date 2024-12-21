@@ -1,6 +1,6 @@
 package database
 
-import "github.com/peterdinis/library-app/backend/entities"
+import "github.com/peterdinis/library-app-backend/entities"
 import (
 	"fmt"
 	"log"
@@ -54,7 +54,7 @@ func Connect() {
 
 	// Log running migrations (if applicable)
 	log.Println("running migrations")
-	err = db.AutoMigrate(&Category{}, &Book{}, &Author{}, &Publisher{})
+	err = db.AutoMigrate(&entities.Category{}, &entities.Book{}, &entities.Author{}, &entities.Publisher{})
 	// Assign the database instance to the global DB variable
 	DB = Dbinstance{
 		Db: db,
