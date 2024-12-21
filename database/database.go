@@ -1,11 +1,11 @@
 package database
 
+import "github.com/peterdinis/library-app/backend/entities"
 import (
 	"fmt"
 	"log"
 	"os"
 	"strconv"
-	"github.com/peterdinis/library-app/backend/entities"
 	"github.com/peterdinis/library-app-backend/config"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
